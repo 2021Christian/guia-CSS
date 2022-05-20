@@ -1,0 +1,502 @@
+/*Reglas Generales*/
+	@font-face{
+		src: url('../assets/font/starjedi.ttf');
+		font-family: 'star wars';
+	}
+	*{
+		box-sizing: border-box;
+		font-family: 'Raleway','calibri','segoe ui', sans-serif;
+	}
+	body,
+	h1,
+	h2,
+	h3,
+	h4,
+	nav ul,
+	header p{
+		margin: 0;
+	}
+	.overflow{
+		max-height: 450px;
+		margin: 1rem;
+		border: .1rem solid #ccc;
+		overflow: auto;
+	}
+	.box{
+		display: inline-block;
+		min-width: 1.5rem;
+		min-height: 1.5rem;
+	}
+	.green{
+		background-color: #3c8;
+	}
+	.red{
+		background-color: #c33;
+	}
+/*Navegacion*/
+	nav{
+		position: sticky;
+		top: 0;
+		z-index: 2;
+		background-color: #66c;
+	}
+	.menu{
+		display: flex;
+		justify-content: center;
+		list-style: none;
+	}
+	.menu a{
+		display: block;
+		padding: .5rem;
+		color: #eee;
+		text-decoration: none;
+	}
+	.menu a:hover{
+		background-color: hsl(240, 30%, 30%);
+	}
+	/*
+		HTML		RGB DECIMAL			RGB HEX		HSL
+		red 		rgb(255,0,0)		#ff0000		hsl(0, 100%, 50%)
+		green 		rgb(0,255,0)		#00ffff		hsl(120, 100%, 50%)
+		blue 		rgb(0,0,255)		#000000 	hsl(240, 100%, 50%)
+		yellow 		rgb(255,255,0) 		#ffffff 	hsl(60, 100%, 50%)
+		cyan		rgb(0,255,255) 		#00ffff 	hsl(180, 100%, 50%)
+		magenta 	rgb(255,0,255) 		#ff0000 	hsl(300, 100%, 50%)
+		white 		rgb(255,255,255) 	#ffffff		hsl(0, 0, 100%)
+		black 		rgb(0,0,0)			#000000		hsl(0, 0, 0)
+	*/
+/*Cabecera*/
+	#header{
+		padding: 20% 1rem;
+		text-align: center;
+		text-shadow: 0 0 .5rem #333; /* x y blur color */
+		color: #eee;
+		background-image: 
+			url('../assets/bg/starship.svg'),
+			url('../assets/bg/shooting-star.jpg');
+		background-position: 
+			70% 50%,
+			center; /*x y | words */
+		background-size:
+			30%, 
+			cover ; /*width height | words */
+		background-repeat: no-repeat;
+		background-attachment: 
+			scroll,
+			fixed;
+	}
+	#header h1{
+		font-family: 'star wars';
+		letter-spacing: .1rem;
+	}
+/*Contenido Principal*/
+	main{
+		max-width: 960px;
+		margin: 1rem auto;
+	}
+	section{
+		margin: 1rem;
+		border-radius: .25rem;
+		padding: 1rem;
+		box-shadow: 0 0 .5rem #333;
+	}
+	main .header{
+		margin: -1rem -1rem 1rem;
+		border-radius: .25rem .25rem 0 0;/*tl tr bl br*/
+		padding: 1rem;
+		color: #eee;
+		background-color: #448;
+	}
+	main header{
+		font-size: 1.5rem;
+		border-bottom: .1rem solid #666;
+	}
+	main h4{
+		font-size: 1.5rem;
+	}
+	.example{
+		margin: .5rem 2rem 1.5rem;/*top right bottom left*/
+		border-left: .25rem solid #448;
+		padding: 1rem;
+		line-height: 1.5rem;
+		background-color: #eee;
+		box-shadow: -.5rem .5rem .5rem #999; /*-x+ -y+ blur color*/
+		list-style: none;
+	}
+	/*Jerarquia de Selectores*/
+		/* #id: Maximo nivel prioridad */
+		.jerarquia #span span{
+			color: darkblue;
+			background-color: skyblue;
+			text-transform: uppercase;
+		}
+		/* .class: Segundo nivel prioridad  */
+		.jerarquia .span span{
+			color: darkgreen;
+			background-color: lightgreen;
+			font-weight: bold;
+		}
+		/* tag: Minimo nivel de prioridad */
+		.jerarquia span{
+			display: inline-block;
+			padding: .5rem;
+			color: darkred;
+			background-color: tomato;
+		}
+	/*Unidades*/
+		.unidades ul{
+			max-width: 600px;
+		}
+		/*absolutas*/
+		.absoluta li{
+			padding: 8px 24px;
+			font-size: 24px;
+		}
+		/*relativas*/
+		.relativa li{
+			padding: .5rem 1.5rem;
+			font-size: 1.5rem;
+		}
+	/*Flexbox*/
+		.flexbox{
+			display: flex;
+			justify-content: space-evenly;
+			flex-wrap: wrap;
+			margin: .5rem;
+			border: .15rem dashed #333;
+		}
+		.flexbox :is(div, span){
+			margin: .25rem;
+			border: .1rem solid #ccc;
+			padding: 1rem;
+			color: #eee;
+			background-color: #448;
+		}
+		/*Align-Items*/
+		.align{
+			min-height: 300px;
+			align-items: center;
+		}
+		.align :first-child{
+			font-size: 2rem;
+			align-self: flex-start;
+		}
+		.align span:first-of-type{
+			font-size: 3rem;
+			align-self: stretch;
+		}
+		.align span:last-child{
+			font-size: 1.5rem;
+			align-self: flex-end;
+		}
+		/*Flex-Direction*/
+		.col{
+			flex-direction: column;
+			border-left-color: #3c8;
+			border-top-color: #c33;
+		}
+		.row-r{
+			flex-direction: row-reverse;
+			border-top-color: #3c8;
+			border-right-color: #c33;
+		}
+		.col-r{
+			flex-direction: column-reverse;
+			border-bottom-color: #3c8;
+			border-left-color: #c33;
+		}
+	/*CSS-grid*/
+		.css-grid,
+		.grid-template{
+			display: grid;
+			grid-template-columns: auto auto auto; /*tamaños indican la cant de columnas*/
+			gap: .5rem; /*row column*/
+			margin: .5rem;
+			border: .2rem dotted #333;
+			padding: 1rem;
+		}
+		:is(.css-grid, .grid-template) :is(div,span){
+			border: .1rem solid #ccc;
+			padding: 1rem;
+			color: #eee;
+			background-color: #c36;
+		}
+		.css-grid div:first-child{ grid-column: span 3; }
+		.css-grid span:first-of-type{ grid-row: span 2; }
+		.css-grid div:last-of-type{ grid-row: span 3; }
+		.css-grid span:last-child{ 
+			grid-row: 2;
+			grid-column: 1 / 4; 
+		}
+		.css-grid.align{
+			justify-content: center;
+			align-content: center;
+			align-items: center;
+			justify-items: center;
+		}
+		.grid-template{
+			grid-template-areas: 
+				'nav 		nav 		nav'
+				'header 	header 		header'
+				'main 		main		aside'
+				'section  	. 			aside'
+				'section  	.	 		aside'
+				'footer  	footer  	footer';
+		}
+		.grid-template div:first-child{ grid-area: header; }
+		.grid-template div:nth-child(2){ grid-area: nav; }
+		.grid-template div:nth-child(3){ grid-area: main; }
+		.grid-template div:last-of-type{ grid-area: section; }
+		.grid-template span:nth-last-child(2){ grid-area: aside; }
+		.grid-template span:last-child{ grid-area: footer; }
+	/*Position*/
+		.position{
+			position: relative;
+			margin: .5rem;
+			border: .2rem groove #666;
+			padding: .5rem;
+		}
+		.position div{
+			margin: .5rem;
+			border: .1rem solid #333;
+			padding: 1rem;
+			color: #eee;
+			font-size: 1.5rem;
+			background: linear-gradient(to right, #c36, #448);
+		}
+		.position :nth-child(1){
+			position: sticky;
+			top: 3rem;
+		}
+		.position :nth-child(2){
+			position: fixed;
+			right: 0;
+			top: calc(50% - 1.5rem);
+			z-index: -1;
+		}
+		.position :nth-child(3){
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+		.position :nth-child(4){
+			position: relative;
+			bottom: 1rem;
+			left: 1rem;
+		}
+		/*Menu desplegable*/
+			.option-menu{
+				display: flex;
+				justify-content: center;
+				background-color: #248;
+			}
+			.option-menu ul{
+				display: none;
+				min-width: 5rem;
+				padding: 0;
+				background-color: #284888;
+			/*position*/
+				position: absolute;
+				top: 100%;
+				left: 0;
+			}
+			.option-menu ul ul{
+				top: 0;
+				left: 100%;
+				background-color: #2f4f8f;
+			}
+			.option-menu a{
+				display: block;
+				padding: .5rem;
+				color: #eee;
+				text-decoration: none;
+			}
+			.option-menu a:hover{
+				background-color: rgba(204,204,238,.5);
+			}
+			.option-menu li{
+				position: relative;
+				list-style: none;
+				z-index: 1;
+			}
+			.option-menu li:hover > ul{
+				display: block;
+			}
+	/*Layout*/
+		.layout{
+			border: .1rem solid #333;
+			padding: 1.5rem;
+		}
+		.layout.flex{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+		.layout.grid{
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(min(200px,100%), 1fr)); /*cantidad, tamaño*/
+			gap: .25rem;
+			padding: .25rem;
+			background-color: #ccc;
+		}
+		.layout div{
+			margin: .5rem 0;
+			border-radius: .25rem;
+			padding: 1rem;
+			background-color: #eee;
+			clear: both;
+			overflow: hidden;
+			box-shadow: -.15rem .15rem .5rem #333;
+		}
+		.layout .title{ 
+			font: bolder 1.5rem sans-serif;
+			text-transform: capitalize;
+		}
+		.layout img{ width: 100%; }
+		.col-1{ width: calc(33% - 2rem) }
+		.col-2{ width: calc(66% - 2rem) }
+		.col-3{ width: 100% }
+		.w-50{ width: calc(50% - 1rem) }
+		.max-200{ max-width: 200px; }
+		.min-300{ min-width: 250px; }
+		.float-right{ float: right; margin-left: .5rem;}
+		.float-left{ float: left;  margin-right: .5rem;}
+		.grid img{
+			border-radius: .25rem;
+		}
+		.masonry :nth-child(even){ grid-row: span 2; }
+		.masonry img{
+			height: 100%;
+			object-fit: cover;
+		}
+	/*PseudoClases: caracteristica o instancia de una etiqueta*/
+	/*PseudoElementos: partes/elementos dentro de una etiqueta*/
+		/*Contadores*/
+			main{ counter-reset: chapter; }
+			main section{ counter-reset: theme; }
+			main article{ counter-reset: section; }
+			main h2::before{
+				counter-increment: chapter;
+				content: 'Capitulo ' counter(chapter)  ': ';
+			}
+			main h3::before{
+				counter-increment: theme;
+				content: 'Tema ' counter(theme) ': ';
+			}
+			main h4::before{
+				counter-increment: section;
+				content: 'Seccion ' counter(section) ': ';
+			}
+		/*First-letter*/
+			section > p::first-letter{
+				float: left;
+				margin-right: .25rem;
+				line-height: 2rem;
+				font-size: 4rem;
+			}
+			section > p::first-line{
+				color: #448;
+				font-weight: bolder;
+			}
+/*Pie de Pagina*/
+	#footer{
+		position: relative;
+		padding: 1rem; /*top right bottom left*/
+		background: linear-gradient(
+			hsla(290,50%,50%,.5),
+			hsla(245,50%,50%,.5) 
+		);
+	}
+	.map{
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		width: 100%;
+		height: 100%;
+		border: none;
+	}
+	.social{
+		max-width: 320px;
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		margin: 1rem auto; /*top right bottom left*/
+		padding: .5rem;
+	}
+	.social a{
+		width: 4rem;
+		height: 4rem;
+		margin: .25rem;
+		border-radius: .25rem;
+		background-color: #eee;
+		background-position: center;
+		background-size: 2.5rem;
+		background-repeat: no-repeat;
+	}
+	.social a:hover{
+		background-color: #fafafa;
+		background-size: 3rem;
+		box-shadow: 0 0 .5rem #333;
+	}
+	.facebook{ background-image: url('../assets/icon/facebook.svg') }
+	.instagram{ background-image: url('../assets/icon/instagram.svg') }
+	.twitter{ background-image: url('../assets/icon/twitter.svg') }
+	.github{ background-image: url('../assets/icon/github.svg') }
+	#contact{
+		display: flex;
+		flex-direction: column;
+		max-width: 540px;
+		margin: auto;
+		border-radius: .25rem;
+		padding: 1rem 1.5rem;
+		color: #eee;
+		background-image: radial-gradient(circle at top right,#66c, #448);
+	}
+	#contact label{
+		margin-top: .5rem;
+		padding: .25rem;
+	}
+	#contact :is(input, textarea, select, button){
+		outline: none;
+		border-radius: .25rem;
+		border: .1rem solid #eee;
+		padding: .5rem 1rem;
+		font-size: 1rem;
+	}
+	#contact textarea{
+		resize: none;
+		min-height: 5rem;
+	}
+	#contact button{
+		cursor: pointer;
+		align-self: flex-end;
+		margin: .25rem 0;
+		padding: .25rem .5rem;
+		text-transform: uppercase;
+		color: #eee;
+		background-color: transparent;
+	}
+	#contact button:hover{
+		color: #66c;
+		background-color: #eee;
+	}
+	#contact .valid{
+		display: none;
+		border-radius: 0 0 .25rem .25rem;/*tl tr br bl*/
+		padding: .5rem;
+		background-color: #333;
+	}
+	/*Validacion de datos*/
+	#contact input:focus{
+		border-radius: .25rem .25rem 0 0;
+	}
+	#contact :not(button):focus{
+		border-color: #333;
+		box-shadow: 0 0 .25rem #eee; /* x y blur color */
+	}
+	#contact :focus + .valid{ display: block; }
+	#contact :not(button):valid{ border-color: #3c6; }
+	#contact :valid + .valid{ background-color: #3c6; }
+	#contact :not(:placeholder-shown):invalid{ border-color: #c33;	}
+	#contact :not(:placeholder-shown):invalid + .valid{ background-color: #c33;	}

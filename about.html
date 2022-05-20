@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		*{
+			margin: .5rem;
+			border: .1rem solid #333;
+			padding: 1rem;
+			color: #eee;
+			background-color: #3338;
+		}
+		body{
+			display: grid;
+			grid-template-areas: 
+				'header 	header 		nav'
+				'.			main		nav'
+				'.			main		nav'
+				'footer 	footer 		footer';
+			gap: .5rem;
+		}
+		#header{ grid-area: header }
+		nav{ grid-area: nav; }
+		main{ grid-area: main; }
+		#footer{ grid-area: footer; }
+	</style>
+</head>
+<body>
+	<header id="header">
+		<h1>soy el titulo</h1>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="">link 1</a></li>
+			<li><a href="">link 2</a></li>
+			<li><a href="">link 3</a></li>
+			<li><a href="">link 4</a></li>
+		</ul>
+	</nav>
+	<main>
+		<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum ad recusandae itaque consectetur eligendi voluptates ipsa. Consequuntur aliquid ratione corporis voluptas dolores veritatis amet atque consequatur delectus natus, rerum iure?</p>
+	</main>
+	<section id="s-1">
+		<header>
+			<h2>section 1</h2>
+		</header>
+	</section>
+	<section id="s-2">
+		<header>
+			<h2>section 2</h2>
+		</header>
+	</section>
+	<footer id="footer">
+		
+	</footer>
+</body>
+</html>

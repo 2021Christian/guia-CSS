@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="es">
+<head> <!-- Parte NO VISIBLE -->
+	<meta charset="UTF-8">
+	<meta name="viewport" 
+		content="
+			width=device-width, 
+			initial-scale=1">
+	<title>Maquetacion Web</title>
+	<!-- Estilos CSS -->
+	<link rel="stylesheet" href="styles/main.css">
+</head>
+<body> <!-- Parte VISIBLE -->
+	<!-- Navegacion: Links mas importantes -->
+	<nav>
+		<ul class="menu">
+			<li><a href="#">Inicio</a></li>
+			<li><a href="about.html">Acerca</a></li>
+			<li><a href="gallery.html">Galeria</a></li>
+			<li><a href="#contact">Contacto</a></li>
+		</ul>
+	</nav>
+	<!-- Cabecera Principal: Contenido Introductorio -->
+	<header id="header">
+		<h1>Maquetacion Web</h1>
+		<p>html | css | jss</p>
+	</header>
+	<!-- Contenido Principal: Relevante para el usuario -->
+	<main>
+		<!-- Seccion: Contenido Contextualizado --->
+		<section>
+			<header class="header">
+				<h2>Introduccion a la Maquetacion</h2>
+			</header>
+			<p>
+				A la hora de realizar un sitio web debemos tener en cuenta algunas caracteristicas como su composicion, el contenido a mostrar, el tipo de difusion que vamos a realizar y el publico objetivo, debido a esto tenemos que hacer incapie en la <strong>estructura (html)</strong> para que los motores de busqueda puedan indexar correctamente el contenido de nuestras paginas; y por otro lado, tambien hacer incapie en el <strong>diseño (css)</strong> para captar la atencion de los usuarios que van a visitar nuestro sitio.
+			</p>
+			<!-- Articulo: Contenido Independiente -->
+			<article>
+				<header>
+					<h3>Estructura Semantica</h3>
+				</header>
+				<p>
+					Una de las caracteristicas introducidas en HTML5 fueron los elementos de la estructura semantica, que son un conjunto de etiquetas que representan las partes en las que se divide una pagina web y mediante las cuales los motores de busqueda pueden optimizar los resultados en las apariciones segun las busquedas realizar por los usuarios. Dentro de esta estructura encontramos las etiquetas que se mencionan en la siguiente lista.
+				</p>
+				<ul class="example">
+					<li><strong>header</strong> contenido introductorio que contiene a los titulos, a veces puede contener la navegacion e incluso una galeria.</li>
+					<li><strong>nav</strong> representa los links mas importantes del sitio, debe aparece una vez y no contener elementos ajenos al mismos.</li>
+					<li><strong>main</strong> contenido principal de la pagina y por lo tanto, mas relevante para el usuario, puede estar divido en varias partes.</li>
+					<li><strong>section</strong> contenido contextualizado o aquel que se relaciona con otros elementos y que no se comprende fuera de la pagina.</li>
+					<li><strong>article</strong> contenido independiente o aquel que funciona tanto dentro como fuera de la pagina debido a que posee su propio contexto.</li>
+					<li><strong>aside</strong> contenido tangencial o lateral, es decir aquel que se relaciona indirectamente con sus elementos hermanos, se suele utilizar para publicidad o sugerencias.</li>
+					<li><strong>footer</strong> contenido complementario al resto de la pagina, suele contener las redes sociales, informacion de contacto/copyright e incluso un mapa del sitio</li>
+				</ul>
+			</article>
+			<article>
+				<header>
+					<h3>Caracteristicas Principales</h3>
+				</header>
+				<p>
+					Todas las etiquetas de HTML poseen atributos, los cuales tienen valores predefinidos por el navegador, pero pueden ser modificados mediante la implementacion de reglas de CSS. Entre los atributos mas comunes o importantes que vamos a estar utilizando encontramos los siguientes:
+				</p>
+				<ul class="example">
+					<li><strong>margin</strong> distancia que existe entre las etiquetas, no suma tamaño y siempre aplica el mas grande.</li>
+					<li><strong>border</strong> linea que rodea a las etiquetas, por defecto suele se cero y suma tamaño.</li>
+					<li><strong>padding</strong> relleno o distancia que existe entre el borde y el contenido, tambien suma tamaño.</li>
+					<li><strong>content</strong> consiste en los elementos que se encuentran dentro de la etiqueta y a los cuales se les da un tamaño limite. (width / height)</li>
+				</ul>
+				<h4>modelo de cajas (Box-sizing)</h4>
+				<ul class="example">
+					<li>
+						<strong>content-box (predeterminado)</strong>
+						<ul>
+							<li><span>content-width:</span> width</li>
+							<li>final-width: width + padding + border</li>
+						</ul>
+					</li>
+					<li>
+						<strong>border-box</strong>
+						<ul>
+							<li>content-width: width - padding - border</li>
+							<li>final-width: width</li>
+						</ul>
+					</li>
+				</ul>
+			</article>
+			<article>
+				<header>
+					<h3>Jerarquia de selectores</h3>
+				</header>
+				<p>
+					El orden de las reglas de CSS, si bien en un principio no afecta en la implementacion de las mismas, es importante para la aplicacion de los estilos, ya que el navegador lee la hoja estilos desde el principio a fin y aplica los mismo por demanda. Por otro lado segun los selectores que utilicemos vamos a notar una preferencia por parte del navegador en la jerarquia de aplicacion de los mismos, priorizando los Id, luego las Clases y por ultimo las etiquetas, como se muestra en el siguiente ejemplo.
+				</p>
+				<ul class="jerarquia example">
+					<li>
+						<strong> Selector</strong>
+						<ul>
+							<li><span>header </span>{}</li>
+							<li><span>header </span> h1{}</li>
+						</ul>
+					</li>
+					<li>
+						<strong> Selector</strong>
+						<ul class="span">
+							<li><span>.header </span>{}</li>
+							<li><span>.header </span> h1{}</li>
+						</ul>
+					</li>
+					<li>
+						<strong> Selector</strong>
+						<ul id="span" class="span">
+							<li><span>#header </span>{}</li>
+							<li><span>#header </span> h1{}</li>
+						</ul>
+					</li>
+				</ul>
+			</article>
+		</section>
+		<section>
+			<header class="header">
+				<h2>Planificacion del Diseño</h2>
+			</header>
+			<p>
+				Uno de los aspectos principales a la hora de realizar un sitio es la planificacion, desde la cantidad de paginas con la que contara el mismo, la organizacion de los elementos, paleta de colores, diseño de interfaz y experiencia de usuario, ya que en base a esto escribiremos el codigo. Si estos aspectos fueron analizados de manera exhaustiva y cubiertos correctamente, mas alla de algun cambio menor, rara vez deberemos realizar modificaciones radicales en nuestro sitio.
+			</p>
+			<article>
+				<header>
+					<h3>Unidades de Medida</h3>
+				</header>
+				<p>
+					Cuando se realiza la planificacion del sitio o pagina en cuestion, debemos optar por diferentes unidades para mantener las proporciones de los elementos, en relacion a su contexto y a los dispositivos donde se estara visualizando la pagina. Para ello contamos con diferentes tipos de medidas, entre las cuales destacan:
+				</p>
+				<ul class="example unidades">
+					<li>
+						<strong>Absolutas</strong> son aquellas unidades independientes al medio en donde se aplican, ya que siempre representan un valor cuantificable. Son ideales para definir limites dentro de nuestro diseño.
+						<ul class="absoluta">
+							<li><strong>distancia: </strong>cm mm in pc</li>
+							<li><strong>tipografia: </strong>pt dpi</li>
+							<li><strong>hibrida: </strong> px(depende de la resolucion)</li>
+						</ul>
+					</li>
+					<li>
+						<strong>Relativas</strong> son aquellas unidades que dependen de su contexto, ya sea su contenedor o la tipografia de dicho elemento, por lo tanto su tamaño varia en funcion de este factor y un mismo valor no siempre representa la misma cantidad.
+						<ul class="relativa">
+							<li><strong>contenedor: </strong> %(tamaño)</li>
+							<li><strong>tipografia: </strong> em ex ch %(fuente)</li>
+							<li><strong>hibrida: </strong> rem (ancho M en la raiz)</li>
+						</ul>
+					</li>
+				</ul>
+			</article>
+			<article>
+				<header>
+					<h3>Modelos de color</h3>
+				</header>
+			</article>
+		</section>
+		<section>
+			<header class="header">
+				<h2>Aplicacion del Diseño</h2>
+			</header>
+			<article>
+				<header>
+					<h3>Flexbox</h3>
+				</header>
+				<p>
+					Modelo de cajas flexible que permite la organizacion del contenido de una etiqueta mediante la implementacion del atributo <strong>display: flex</strong>. Una vez aplicado este atributo las etiquetas que sean hijas directas del contenedor se van a organizar y distribuir a traves de un eje principal (main) y un eje cruzado (cross).
+				</p>
+				<h4>Justify-Content</h4>
+				<p>
+					Atributo que permite al contenedor distribuir el contenido en el eje principal, que por defecto es el horizontal y los elementos del mismo se ubican de izquierda a derecha. Entre los valores que podemos utilizar se encuentran los siguientes:
+				</p>
+				<ul class="example">
+					<li><strong>flex-start</strong> acomoda los elementos al principio del flex</li>
+					<li><strong>flex-end</strong> acomoda los elementos al final del flex sin invertir el orden</li>
+					<li><strong>center</strong> acomoda los elementos hacia el centro del flex</li>
+					<li><strong>space-around</strong> separa los elementos aplicando el mismo espacio para cada uno, pero la distancia intermedia es el resultado de la suma de dichos espacios.</li>
+					<li><strong>space-between</strong> separa los elementos entre extremos de manera equitativa, colocando al primer y al ultimo elemento pegados a los bordes del contenedor.</li>
+					<li><strong>space-evenly</strong> distribuye equitativamente todos los elementos dentro del contenedor (no es compatible con todos los navegadores)</li>
+				</ul>
+				<div class="flexbox">
+					<div>div 1</div>
+					<div>div 2</div>
+					<div>div 3</div>
+					<div>div 4</div>
+					<span>span 1</span>
+					<span>span 2</span>
+					<span>span 3</span>
+					<span>span 4</span>
+				</div>
+				<h4>Align-Items</h4>
+				<p>
+					Atributo que permite al contenedor organizar el contenido en el eje cruzado, que por defecto es el vertical y el mismo se adapta al tamaño del elemento mas grande o el contendor en caso que no haya uno de mayor tamaño. Entre los valores de dicho atributo se encuentras los siguientes:
+				</p>
+				<ul class="example">
+					<li><strong>stretch</strong> estira los elementos de manera que ocupen todo el alto del contenedor</li>
+					<li><strong>flex-start</strong> ubica los elementos al principio del flex</li>
+					<li><strong>flex-end</strong> ubica los elementos al final del flex</li>
+					<li><strong>center</strong> ubica los elementos hacia el centro del flex</li>
+					<li><strong>baseline</strong> ubica los elementos al principio del flex en base a su fuente, de manera tal que puedan ser leidos.</li>
+					<li><strong>align-self</strong> atributo que permite definir su propia alineacion a un elemento dentro del flex</li>
+				</ul>
+				<div class="flexbox align">
+					<div>div 1</div>
+					<div>div 2</div>
+					<div>div 3</div>
+					<div>div 4</div>
+					<span>span 1</span>
+					<span>span 2</span>
+					<span>span 3</span>
+					<span>span 4</span>
+				</div>
+				<h4>Flex-Direction</h4>
+				<p>
+					Atributo que permite definir la orientacion de los ejes principal y secundario, cambiando el sentido de alineacion y justificacion.
+				</p>
+				<ul class="example">
+					<li><strong>row</strong> los contenidos se crean de izquierda a derecha (main) y de arriba hacia abajo (cross)</li>
+					<li><strong>column</strong> los contenidos se crean de arriba hacia abajo (main) y de izquierda a derecha (cross)</li>
+					<li><strong>row-reverse</strong> los elementos se crean de derecha a izquierda (main) y de arriba hacia abajo (cross)</li>
+					<li><strong>column-reverse</strong> los elementos se crean de abajo hacia arriba (main) y de izquierda a derecha</li>
+				</ul>
+				<ul>
+					<li><span class="box green"></span> main axis</li>
+					<li><span class="box red"></span> cross axis</li>
+				</ul>
+				<div class="overflow">
+					<div class="flexbox align col">
+						<strong>Column</strong>
+						<div>div 1</div>
+						<div>div 2</div>
+						<div>div 3</div>
+						<div>div 4</div>
+						<span>span 1</span>
+						<span>span 2</span>
+						<span>span 3</span>
+						<span>span 4</span>
+					</div>
+					<div class="flexbox align row-r">
+						<strong>Row-Reverse</strong>
+						<div>div 1</div>
+						<div>div 2</div>
+						<div>div 3</div>
+						<div>div 4</div>
+						<span>span 1</span>
+						<span>span 2</span>
+						<span>span 3</span>
+						<span>span 4</span>
+					</div>
+					<div class="flexbox align col-r">
+						<strong>Column-Reverse</strong>
+						<div>div 1</div>
+						<div>div 2</div>
+						<div>div 3</div>
+						<div>div 4</div>
+						<span>span 1</span>
+						<span>span 2</span>
+						<span>span 3</span>
+						<span>span 4</span>
+					</div>
+				</div>
+			</article>
+			<article>
+				<header>
+					<h3>CSS-Grid</h3>
+				</header>
+				<p>
+					Modelo de grilla multidimensional que implementa un eje horizontal y un eje vertical para la distribucion del contenido en celdas. A diferencia de flexbox, donde el referente es la misma etiqueta donde aplicamos el valor <em>flex</em>, cuando aplicamos el atributo <strong>display:grid</strong> se generan celdas acorde a la cantidad de elementos dentro del contenedor.
+					Basicamente es una reversion de las tablas html cuyo objetivo es el diseño y no la estructura, como es el caso del primero.
+				</p>
+				<h4>sistema de grillas (grid-template)</h4>
+				<p>
+					Una de las principales diferencias con flexbox, es que las filas son automaticas y el contenido por defecto se distribuye en una sola columna, en caso que necesitemos mas debemos especicarlo indicando el tamaño de las misma. El contenido se organiza de izquierda a derecha y de arriba hacia abajo.
+				</p>
+				<ul class="example">
+					<li><strong>grid-template-columns</strong> permite definir la cantidad de columnas mediante sus tamaños.</li>
+					<li><strong>grid-template-rows</strong> permite definir el tamaño de cada fila, pero no su cantidad (automatica).</li>
+					<li><strong>gap</strong> separacion entre filas y columnas respectivamente, simplifica la aplicacion de margenes.</li>
+					<li><strong>grid-column</strong> permite indicar la cantidad de columnas que ocupara la celda o su posicion indicando inicio/fin</li>
+					<li><strong>grid-row</strong> permite indicar la cantidad de filas que ocupara la celda o su posicion indicando inicio/fin</li>
+				</ul>
+				<div class="css-grid">
+					<div>div 1</div>
+					<div>div 2</div>
+					<div>div 3</div>
+					<div>div 4</div>
+					<span>span 1</span>
+					<span>span 2</span>
+					<span>span 3</span>
+					<span>span 4</span>
+				</div>
+				<h4>Organizacion y distribucion (justify | align)</h4>
+				<ul class="example">
+					<li><strong>justify-content</strong> distribuye la grilla dentro del contenedor sobre el eje horizontal.</li>
+					<li><strong>align-content</strong> alinea la grilla dentro del contenedor sobre el eje vertical</li>
+					<li><strong>justify-items</strong> distribuye el contenido de la celda sobre el eje horizontal (pierde la forma original)</li>
+					<li><strong>align-items</strong> alinea el contenido de la celda sobre el eje vertical (pierde la forma original)</li>
+				</ul>
+				<div class="css-grid align">
+					<div>div 1</div>
+					<div>div 2</div>
+					<div>div 3</div>
+					<div>div 4</div>
+					<span>span 1</span>
+					<span>span 2</span>
+					<span>span 3</span>
+					<span>span 4</span>
+				</div>
+				<h4>Plantilla de areas (template-areas)</h4>
+				<ul class="example">
+					<li><strong>grid-template-areas</strong> permite crear una estructura para la grilla utilizando nombres para representar las celdas y su posicion, tambien podemos utilizan puntos para indicar que dicho espacio puede ser ocupado por cualquier elemento.</li>
+					<li><strong>grid-area</strong> asigna el nombre de area a la que pertenece la etiqueta, pero debemos tener cuidado porque, a diferencia de <em>grid-column</em> y <em>grid-row</em>, permite la superposicion de zonas.</li>
+				</ul>
+				<div class="grid-template">
+					<div>header</div>
+					<div>nav</div>
+					<div>main</div>
+					<div>section</div>
+					<span>article</span>
+					<span>article</span>
+					<span>aside</span>
+					<span>footer</span>
+				</div>
+			</article>
+			<article>
+				<header>
+					<h3>Position</h3>
+				</header>
+				<p>
+					Cuando realizamos el diseño de nuestra pagina, los elementos ocupan un lugar en el espacio de la misma, es decir, que pertenecen al flujo del documento (flow). El valor predeterminado es <strong>static</strong>, el cual impide que realicemos cambios en la ubicacion del elemento con respecto a sus referentes y su posicion con respecto al flow.
+				</p>
+				<ul class="example">
+					<li><strong>static</strong> el elemento ocupa lugar dentro del flow, su posicion no puede modificarse y no sirve como referente.</li>
+					<li><strong>relative</strong> el elemento ocupa un lugar en el flow y puede modificar su posicion, siendo su propio referente.</li>
+					<li><strong>absolute</strong> el elemento deja de formar parte del flow y se posiciona respecto al primer ancestro que no sea static.</li>
+					<li><strong>fixed</strong> el elemento se sale del flow y se ubica de manera fija utilizando como referente al viewport.</li>
+					<li><strong>sticky</strong> el elemento se encuentra dentro del flow, pero dejar de formar parte del mismo cuando se cumple una condicion.</li>
+				</ul>
+				<div class="position">
+					<div>sticky</div>
+					<div>fixed</div>
+					<div>absolute</div>
+					<div>relative</div>
+					<div>static</div>
+				</div>
+			</article>
+		</section>
+		<section>
+			<header class="header">
+				<h2>Ejemplos de Diseño</h2>
+			</header>
+			<article>
+				<header>
+					<h3>Flexbox</h3>
+				</header>
+				<h4 class="show">Comparacion <span>(mostrar)</span></h4>
+				<div class="layout flex">
+					<div class="col-1 min-300">
+						<img src="assets/img/poster-californication.jpg" alt="">
+						<p class="title">californication</p>
+						<p>
+							
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam pariatur praesentium similique doloremque quod optio deleniti. Vero, ex esse officia praesentium vitae provident totam possimus. Quasi, praesentium error vel corrupti, aperiam consectetur at illum. Id laboriosam quod iste consequuntur rerum iure excepturi quo placeat asperiores vel corrupti voluptates consectetur sint praesentium optio ab aliquid velit quidem, blanditiis? Dolorem atque optio iure exercitationem, sapiente quae tempore nulla dicta quidem, deserunt itaque cupiditate officia? Tempora magnam dolorem, accusamus iure facere et corporis rerum sint fuga eum aspernatur at voluptas aut quidem quam unde porro quasi ea dolorum. Sint eum eos voluptatum fugit.
+						</p>
+					</div>
+					<div class="col-1 min-300">
+						<img src="assets/img/poster-by-the-way.jpg" alt="">
+						<p class="title">by-the-way</p>
+						<p>
+							
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste delectus perspiciatis, iusto officia recusandae adipisci voluptatum cupiditate possimus mollitia velit fuga, sint earum labore eligendi, voluptates totam ullam molestias distinctio minus nemo nobis, consectetur aspernatur placeat! Eligendi, cumque magnam suscipit quae repudiandae omnis aliquid? Provident mollitia magni, natus numquam, doloribus neque reprehenderit quod nam sapiente excepturi, vitae, amet fuga. Similique, recusandae illum in ipsam reiciendis quos, fuga ea officiis dolorem quas libero minima fugiat culpa velit repellendus expedita unde. Magnam ducimus inventore, iure dolore necessitatibus officiis illo commodi incidunt, sed quo dicta, deleniti delectus quas unde dolorum. Repellendus, possimus error.
+						</p>
+					</div>
+					<div class="col-1 min-300">
+						<img src="assets/img/poster-cant-stop.jpg" alt="">
+						<p class="title">cant-stop</p>
+						<p>
+							
+							Lorem ipsum dolor, sit amet, consectetur adipisicing elit. Consequatur expedita ad pariatur asperiores nemo fugit laboriosam repellat quidem eos atque! Distinctio libero alias cupiditate harum facere ex modi. Ullam doloremque autem alias nobis cumque, incidunt saepe repellendus suscipit recusandae maiores totam consequatur corrupti repellat quaerat molestias sapiente explicabo! Aspernatur, facilis repellendus iusto deleniti veritatis debitis nisi dignissimos blanditiis molestias porro magnam placeat tempora illum possimus dolore accusamus neque adipisci, est quam. Maxime laborum a incidunt sint ex debitis eligendi quas, officia, repellendus cum repudiandae harum expedita adipisci. Explicabo quam soluta, repellendus, officia aliquam, laboriosam vitae aut, ex molestias voluptatum amet?
+						</p>
+					</div>
+				</div>
+				<h4 class="show">Organizacion <span>(mostrar)</span></h4>
+				<div class="layout flex">
+					<div class="col-3">
+						<img class="max-200 float-right" src="assets/img/poster-californication.jpg" alt="">
+						<p class="title">californication</p>
+						<p>
+							
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam pariatur praesentium similique doloremque quod optio deleniti. Vero, ex esse officia praesentium vitae provident totam possimus. Quasi, praesentium error vel corrupti, aperiam consectetur at illum. Id laboriosam quod iste consequuntur rerum iure excepturi quo placeat asperiores vel corrupti voluptates consectetur sint praesentium optio ab aliquid velit quidem, blanditiis? Dolorem atque optio iure exercitationem, sapiente quae tempore nulla dicta quidem, deserunt itaque cupiditate officia? Tempora magnam dolorem, accusamus iure facere et corporis rerum sint fuga eum aspernatur at voluptas aut quidem quam unde porro quasi ea dolorum. Sint eum eos voluptatum fugit.
+						</p>
+					</div>
+					<div class="col-3">
+						<img class="max-200 float-right" src="assets/img/poster-by-the-way.jpg" alt="">
+						<p class="title">by-the-way</p>
+						<p>
+							
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste delectus perspiciatis, iusto officia recusandae adipisci voluptatum cupiditate possimus mollitia velit fuga, sint earum labore eligendi, voluptates totam ullam molestias distinctio minus nemo nobis, consectetur aspernatur placeat! Eligendi, cumque magnam suscipit quae repudiandae omnis aliquid? Provident mollitia magni, natus numquam, doloribus neque reprehenderit quod nam sapiente excepturi, vitae, amet fuga. Similique, recusandae illum in ipsam reiciendis quos, fuga ea officiis dolorem quas libero minima fugiat culpa velit repellendus expedita unde. Magnam ducimus inventore, iure dolore necessitatibus officiis illo commodi incidunt, sed quo dicta, deleniti delectus quas unde dolorum. Repellendus, possimus error.
+						</p>
+					</div>
+					<div class="col-3">
+						<img class="max-200 float-right" src="assets/img/poster-cant-stop.jpg" alt="">
+						<p class="title">cant-stop</p>
+						<p>
+							
+							Lorem ipsum dolor, sit amet, consectetur adipisicing elit. Consequatur expedita ad pariatur asperiores nemo fugit laboriosam repellat quidem eos atque! Distinctio libero alias cupiditate harum facere ex modi. Ullam doloremque autem alias nobis cumque, incidunt saepe repellendus suscipit recusandae maiores totam consequatur corrupti repellat quaerat molestias sapiente explicabo! Aspernatur, facilis repellendus iusto deleniti veritatis debitis nisi dignissimos blanditiis molestias porro magnam placeat tempora illum possimus dolore accusamus neque adipisci, est quam. Maxime laborum a incidunt sint ex debitis eligendi quas, officia, repellendus cum repudiandae harum expedita adipisci. Explicabo quam soluta, repellendus, officia aliquam, laboriosam vitae aut, ex molestias voluptatum amet?
+						</p>
+					</div>
+				</div>
+				<h4 class="show">Destacado <span>(mostrar)</span></h4>
+				<div class="layout flex">
+					<div class="col-3">
+						<img class="max-200 float-left" src="assets/img/poster-californication.jpg" alt="">
+						<p class="title">californication</p>
+						<p>
+							
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam pariatur praesentium similique doloremque quod optio deleniti. Vero, ex esse officia praesentium vitae provident totam possimus. Quasi, praesentium error vel corrupti, aperiam consectetur at illum. Id laboriosam quod iste consequuntur rerum iure excepturi quo placeat asperiores vel corrupti voluptates consectetur sint praesentium optio ab aliquid velit quidem, blanditiis? Dolorem atque optio iure exercitationem, sapiente quae tempore nulla dicta quidem, deserunt itaque cupiditate officia? Tempora magnam dolorem, accusamus iure facere et corporis rerum sint fuga eum aspernatur at voluptas aut quidem quam unde porro quasi ea dolorum. Sint eum eos voluptatum fugit.
+						</p>
+					</div>
+					<div class="w-50">
+						<img class="max-200 float-left" src="assets/img/poster-by-the-way.jpg" alt="">
+						<p class="title">by-the-way</p>
+						<p>
+							
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste delectus perspiciatis, iusto officia recusandae adipisci voluptatum cupiditate possimus mollitia velit fuga, sint earum labore eligendi, voluptates totam ullam molestias distinctio minus nemo nobis, consectetur aspernatur placeat! Eligendi, cumque magnam suscipit quae repudiandae omnis aliquid? Provident mollitia magni, natus numquam, doloribus neque reprehenderit quod nam sapiente excepturi, vitae, amet fuga. Similique, recusandae illum in ipsam reiciendis quos, fuga ea officiis dolorem quas libero minima fugiat culpa velit repellendus expedita unde. Magnam ducimus inventore, iure dolore necessitatibus officiis illo commodi incidunt, sed quo dicta, deleniti delectus quas unde dolorum. Repellendus, possimus error.
+						</p>
+					</div>
+					<div class="w-50">
+						<img class="max-200 float-left" src="assets/img/poster-cant-stop.jpg" alt="">
+						<p class="title">cant-stop</p>
+						<p>
+							
+							Lorem ipsum dolor, sit amet, consectetur adipisicing elit. Consequatur expedita ad pariatur asperiores nemo fugit laboriosam repellat quidem eos atque! Distinctio libero alias cupiditate harum facere ex modi. Ullam doloremque autem alias nobis cumque, incidunt saepe repellendus suscipit recusandae maiores totam consequatur corrupti repellat quaerat molestias sapiente explicabo! Aspernatur, facilis repellendus iusto deleniti veritatis debitis nisi dignissimos blanditiis molestias porro magnam placeat tempora illum possimus dolore accusamus neque adipisci, est quam. Maxime laborum a incidunt sint ex debitis eligendi quas, officia, repellendus cum repudiandae harum expedita adipisci. Explicabo quam soluta, repellendus, officia aliquam, laboriosam vitae aut, ex molestias voluptatum amet?
+						</p>
+					</div>
+				</div>
+			</article>
+			<article>
+				<header>
+					<h3>CSS-Grid</h3>
+				</header>
+				<h4 class="show">Galeria <span>(mostrar)</span></h4>
+				<div class="layout grid">
+					<img src="assets/img/jjba-starplatinum-01.jpg" alt="Dibujo JJBA Star Platinum">
+					<img src="assets/img/jjba-starplatinum-02.jpg" alt="Dibujo JJBA Star Platinum">
+					<img src="assets/img/jjba-starplatinum-03.jpg" alt="Dibujo JJBA Star Platinum">
+					<img src="assets/img/jjba-starplatinum-04.jpg" alt="Dibujo JJBA Star Platinum">
+					<img src="assets/img/jjba-silverchariot-01.jpg" alt="Dibujo JJBA Silver Chariot">
+					<img src="assets/img/jjba-silverchariot-02.jpg" alt="Dibujo JJBA Silver Chariot">
+					<img src="assets/img/jjba-silverchariot-03.jpg" alt="Dibujo JJBA Silver Chariot">
+					<img src="assets/img/jjba-silverchariot-04.jpg" alt="Dibujo JJBA Silver Chariot">
+					<img src="assets/img/jjba-theworld-01.jpg" alt="Dibujo JJBA the World">
+					<img src="assets/img/jjba-theworld-02.jpg" alt="Dibujo JJBA the World">
+					<img src="assets/img/jjba-theworld-03.jpg" alt="Dibujo JJBA the World">
+					<img src="assets/img/jjba-theworld-04.jpg" alt="Dibujo JJBA the World">
+				</div>	
+				<h4 class="show ">Galeria <span>(mostrar)</span></h4>
+				<div class="layout grid masonry">
+					<img src="assets/img/jjba-starplatinum-01.jpg" alt="Dibujo JJBA Star Platinum">
+					<img src="assets/img/jjba-starplatinum-02.jpg" alt="Dibujo JJBA Star Platinum">
+					<img src="assets/img/jjba-starplatinum-03.jpg" alt="Dibujo JJBA Star Platinum">
+					<img src="assets/img/jjba-starplatinum-04.jpg" alt="Dibujo JJBA Star Platinum">
+					<img src="assets/img/jjba-silverchariot-01.jpg" alt="Dibujo JJBA Silver Chariot">
+					<img src="assets/img/jjba-silverchariot-02.jpg" alt="Dibujo JJBA Silver Chariot">
+					<img src="assets/img/jjba-silverchariot-03.jpg" alt="Dibujo JJBA Silver Chariot">
+					<img src="assets/img/jjba-silverchariot-04.jpg" alt="Dibujo JJBA Silver Chariot">
+					<img src="assets/img/jjba-theworld-01.jpg" alt="Dibujo JJBA the World">
+					<img src="assets/img/jjba-theworld-02.jpg" alt="Dibujo JJBA the World">
+					<img src="assets/img/jjba-theworld-03.jpg" alt="Dibujo JJBA the World">
+					<img src="assets/img/jjba-theworld-04.jpg" alt="Dibujo JJBA the World">
+				</div>
+			</article>
+			<article>
+				<header>
+					<h3>Position</h3>
+				</header>
+				<h4 class="show">Menu desplegable</h4>
+				<div class="layout">
+					<ul class="option-menu">
+						<li>
+							<a href="">link 1</a>
+							<ul>
+								<li>
+									<a href="">item 1</a>
+									<ul>
+										<li><a href="">option 1</a></li>
+										<li><a href="">option 2</a></li>
+										<li><a href="">option 3</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="">item 2</a>
+									<ul>
+										<li><a href="">option 1</a></li>
+										<li><a href="">option 2</a></li>
+										<li><a href="">option 3</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="">item 3</a>
+									<ul>
+										<li><a href="">option 1</a></li>
+										<li><a href="">option 2</a></li>
+										<li><a href="">option 3</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="">link 2</a>
+							<ul>
+								<li>
+									<a href="">item 1</a>
+									<ul>
+										<li><a href="">option 1</a></li>
+										<li><a href="">option 2</a></li>
+										<li><a href="">option 3</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="">item 2</a>
+									<ul>
+										<li><a href="">option 1</a></li>
+										<li><a href="">option 2</a></li>
+										<li><a href="">option 3</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="">item 3</a>
+									<ul>
+										<li><a href="">option 1</a></li>
+										<li><a href="">option 2</a></li>
+										<li><a href="">option 3</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="">link 3</a>
+							<ul>
+								<li>
+									<a href="">item 1</a>
+									<ul>
+										<li><a href="">option 1</a></li>
+										<li><a href="">option 2</a></li>
+										<li><a href="">option 3</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="">item 2</a>
+									<ul>
+										<li><a href="">option 1</a></li>
+										<li><a href="">option 2</a></li>
+										<li><a href="">option 3</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="">item 3</a>
+									<ul>
+										<li><a href="">option 1</a></li>
+										<li><a href="">option 2</a></li>
+										<li><a href="">option 3</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="">link 4</a>
+							<ul>
+								<li>
+									<a href="">item 1</a>
+									<ul>
+										<li><a href="">option 1</a></li>
+										<li><a href="">option 2</a></li>
+										<li><a href="">option 3</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="">item 2</a>
+									<ul>
+										<li><a href="">option 1</a></li>
+										<li><a href="">option 2</a></li>
+										<li><a href="">option 3</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="">item 3</a>
+									<ul>
+										<li><a href="">option 1</a></li>
+										<li><a href="">option 2</a></li>
+										<li><a href="">option 3</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</article>
+		</section>
+	</main>
+	<!-- Pie de Pagina: Contenido Complementario -->
+	<footer id="footer"> 
+		<iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.113265720038!2d-58.45317768569324!3d-34.576000480466746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb5c2c8c6ec53%3A0x42a8c524dae5612e!2sPalpa%20%26%20Capit%C3%A1n%20General%20Ram%C3%B3n%20Freire%2C%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1652893910842!5m2!1ses-419!2sar" loading="lazy"></iframe>
+		<div class="social">
+			<a href="https://instagram.com" class="instagram" target="_blank"></a>
+			<a href="https://facebook.com" class="facebook" target="_blank"></a>
+			<a href="https://twitter.com" class="twitter" target="_blank"></a>
+			<a href="https://github.com/2021Christian" class="github" target="_blank"></a>
+		</div>
+		<form id="contact">
+			<h2>Dejanos tu consulta</h2>
+			<label for="contactName">ingrese su Nombre</label>
+			<input 
+				id="contactName"
+				name="contactName"
+				type="text" 
+				maxlength="50" 
+				pattern = "[A-Z a-z]{3-50}"
+				placeholder="Nombre (*): Christian Ghione" 
+				required>
+			<div class="valid">
+				Ingrese su nombre solamente con letras y espacios. 
+				El mismo debera poseer entre 3 y 50 caracteres
+			</div>
+			<label for="contactEmail">ingrese su Correo</label>
+			<input 
+				id="contactEmail" 
+				name="contactEmail" 
+				type="email"
+				minlength="8" 
+				placeholder="Correo (*): mail@mail.com"
+				required>
+			<div class="valid">
+				Ingrese una direccion respetando el formato "usuario@servidor". 
+				La misma debe poseer por lo menos 8 caracteres.
+			</div>
+			<label for="contactPhone">ingrese su Telefono</label>
+			<input 
+				id="contactPhone" 
+				name="contactPhone" 
+				type="tel"
+				pattern="[\(]\d{2,6}[\)]\d{3,6}[\-]\d{3,6}"
+				placeholder="Telefono(*): (5411)1122-3344" 
+				required>
+			<div class="valid">
+				Ingrese su numero como se muestra en el ejemplo: (5411)0303-456. puede utilizar un guion cada 3 a 6 digitos
+			</div>
+			<label for="contactConsult">Ingrese su Consulta</label>
+			<textarea 
+				id="contactConsult" 
+				name="contactConsult"
+				minlength="10"
+				maxlength="200" 
+				placeholder="Consulta (*): Hola, necesito un presupuesto" 
+				required></textarea>
+			<button>enviar</button>
+		</form>
+		<p>&copy;2021 Todos los derechos reservados</p>
+	</footer>
+</body>
+</html>
